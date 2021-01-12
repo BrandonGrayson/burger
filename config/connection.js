@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     
     // Your port; if not 3306
-    port: process.env.PORT || 8080,
+    port: process.env.PORT || 3306,
     
     // Your username
     user: "root",

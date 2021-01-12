@@ -1,1 +1,26 @@
 // what the page will render
+
+<h1>Eat Da Burger</h1>
+
+<ul>
+{{!-- {{#each burgers}} --}}
+{{#if devoured}}
+    <p>burger: {{this.burger_name}}</p>
+{{/if}}
+{{/each}}
+</ul>
+
+<ul>
+{{#each burgers}}
+{{#unless devoured}}
+    <p>burger: {{this.burger_name}}</p>
+{{/unless}}
+{{/each}}
+
+</ul>
+
+<form action="/" method="POST">
+	<textarea type="text" name="wish"></textarea>
+
+	<button type="submit">Submit</button>
+</form>
