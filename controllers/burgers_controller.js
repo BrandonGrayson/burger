@@ -35,15 +35,16 @@ router.post("/api/burgers", function (req, res) {
   })
 })
 
+router.put("/api/:table/:id", function (req, res) {
+  console.log(req.params.table)
+  console.log(req.params.id)
+  const table = req.params.table
+  const id = req.params.id
+  burger.updateOne(table, id, function(data) {
+    console.log(data)
+  })
+})
 
-// router.post("/api/burgers", function (req, res) {
-//   console.log(req.body)
-//   var newBurger = req.body
-
-//   burger.insertOne(newBurger, function(data) {
-//     const
-//   })
-// })
 
 //REQUEST
 //req.body

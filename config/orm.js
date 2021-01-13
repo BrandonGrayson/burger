@@ -5,7 +5,8 @@ const orm = {
         const queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function(err, result) {
             if (err) {
-                throw err;
+                // return res.status(500).end()
+                throw err
             }
             cb(result)
         })
@@ -16,7 +17,19 @@ const orm = {
         const queryString =  `INSERT INTO burgers (burger_name) VALUES("${tableInput}")`
         connection.query(queryString, function (err, result) {
             if (err) {
-                throw err;
+                // return res.status(500).end()
+                throw err
+            }
+            cb(result)
+        })
+    },
+    // update devoured to be true
+    updateOne: function (table, id, cb) {
+        const queryString = `UPDATE burgers SET ${table} = true WHERE ${id}`
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                // return res.status(500).end()
+                throw err
             }
             cb(result)
         })
