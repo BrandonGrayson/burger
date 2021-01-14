@@ -8,7 +8,9 @@
 {{!-- {{#each burgers}} --}}
     {{#each burgers}}
         {{#unless devoured}}
-            <li>{{this.burger_name}}</li>
+            <li id="burger-list">{{this.burger_name}}
+
+            </li>
     {{!-- {{> cats/cat-block sleep=true}} --}}
         {{/unless}}
     {{/each}}
