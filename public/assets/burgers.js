@@ -3,6 +3,7 @@ $(function () {
     $('#eat-burger').on("click", function (event) {
         event.preventDefault()
         console.log(this.val())
+        var id = this.val
     })
 
 })
