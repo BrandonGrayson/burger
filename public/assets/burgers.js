@@ -18,9 +18,9 @@ $(function () {
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
         console.log(event);
-        console.log($("add-burger").val().trim())
+        console.log($("#add-burger").val().trim())
         var newBurger = {
-            burger_name: $("#add-burger").val().trim(),
+            burger: $("#add-burger").val().trim(),
         }
         $.ajax("/api/burgers", {
             type: "POST",
@@ -28,7 +28,7 @@ $(function () {
         }).then(
             function() {
                 console.log("we are here!")
-                // location.reload();
+                location.reload();
             }
         )
     });
