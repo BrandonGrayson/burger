@@ -1,26 +1,37 @@
-// what the page will render
+{{!-- // what the page will render --}}
 
 <h1>Eat Da Burger</h1>
 
-<ul>
+<h2>Burgers That are not devoured!</h2>
+
+<ul id="burger-list">
 {{!-- {{#each burgers}} --}}
-{{#if devoured}}
-    <p>burger: {{this.burger_name}}</p>
-{{/if}}
-{{/each}}
+    {{#each burgers}}
+        {{#unless devoured}}
+            <li >
+                {{this.burger_name}}
+                <button data-id="{{this.id}}" >Devour</button>
+            </li>
+    {{!-- {{> cats/cat-block sleep=true}} --}}
+        {{/unless}}
+    {{/each}}
 </ul>
 
-<ul>
-{{#each burgers}}
-{{#unless devoured}}
-    <p>burger: {{this.burger_name}}</p>
-{{/unless}}
-{{/each}}
+<h2 >Devoured Burgers</h2>
 
-</ul>
+ <ul>
+    {{#each burgers}}
+        {{#if devoured}}
+        <li>{{this.burger_name}}</li>
+            {{!-- {{> cats/cat-block sleep=true}}  --}}
+        {{/if}}
+    {{/each}}
+</ul> 
 
-<form action="/" method="POST">
-	<textarea type="text" name="wish"></textarea>
-
-	<button type="submit">Submit</button>
+<form class="create-form">
+	<div class="form-group">
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="add-burger" name="name">
+    </div>
+    <input type="submit" value="burger">
 </form>
