@@ -27,8 +27,11 @@
     {{/each}}
 </ul> 
 
-<form action="/api/burgers" method="POST">
-	<textarea type="text" name="burger"></textarea>
-
+<form class="create-form" method="POST">
+	<div>
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="add-burger" name="name">
+    </div>
+    <input type="submit" value="newburger">
 	<button id="burger-to-be-devoured" type="submit" >Submit</button>
 </form>
