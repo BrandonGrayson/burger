@@ -4,11 +4,11 @@
 
 <h2>Burgers That are not devoured!</h2>
 
-<ul>
+<ul id="burger-list">
 {{!-- {{#each burgers}} --}}
     {{#each burgers}}
         {{#unless devoured}}
-            <li id="burger-list">
+            <li >
                 {{this.burger_name}}
                 <button data-id="{{this.id}}" >Devour</button>
             </li>

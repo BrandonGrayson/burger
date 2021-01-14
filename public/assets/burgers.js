@@ -1,10 +1,12 @@
 console.log("hello")
 $(function () {
     // click listener to fire on button click
-    $('#burger-list').children("button").on("click", function (event) {
-        var id = $(this).data("id");
+    $('#burger-list').children("li").children("button").on("click", function (event) {
+        console.log("btn clicked")
+        var id = $(this).attr("data-id");
+        console.log(id)
 
-        $.ajax("/api/burger/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: {}
         }).then(
