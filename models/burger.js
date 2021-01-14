@@ -20,9 +20,9 @@ const burger = {
             cb(res)
         })
     },
-    updateOne: function (table, id, cb) {
-        console.log(`DATA SENT FROM BURGER.JS UPDATEONE--->`, table, id,)
-        orm.updateOne(table, id, function (res) {
+    updateOne: function (id, cb) {
+        console.log(`DATA SENT FROM BURGER.JS UPDATEONE--->`,id,)
+        orm.updateOne(id, function (res) {
             console.log(`DATA SENT FROM BURGER.JS UPDATEONE--->`, res) 
             cb(res)
         })

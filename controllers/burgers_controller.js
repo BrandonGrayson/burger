@@ -27,23 +27,27 @@ router.post("/api/burgers", function (req, res) {
 
   // render the page with the new results
   console.log(req.body)
-  var newBurger = req.body.data
+  var newBurger = req.body.burger
 
   burger.insertOne(newBurger, function(data) {
     console.log(data)
+    res.json(data)
     
   })
 })
 
-router.put("/api/:table/:id", function (req, res) {
-  console.log(req.params.table)
+router.put("/api/burgers/:id", function (req, res) {
   console.log(req.params.id)
-  const table = req.params.table
   const id = req.params.id
-  burger.updateOne(table, id, function(data) {
+  burger.updateOne(id, function(data) {
     console.log(data)
+    res.json(data)
   })
 })
+
+
+
+
 
 
 //REQUEST

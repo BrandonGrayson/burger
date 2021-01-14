@@ -24,8 +24,8 @@ const orm = {
         })
     },
     // update devoured to be true
-    updateOne: function (table, id, cb) {
-        const queryString = `UPDATE burgers SET ${table} = true WHERE ${id}`
+    updateOne: function (id, cb) {
+        const queryString = `UPDATE burgers SET devoured = true WHERE id = ${id}`
         connection.query(queryString, function (err, result) {
             if (err) {
                 // return res.status(500).end()
