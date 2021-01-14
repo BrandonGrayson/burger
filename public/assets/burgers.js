@@ -2,8 +2,6 @@ console.log("hello")
 $(function () {
     // click listener to fire on button click
     $('#burger-list').children("button").on("click", function (event) {
-        event.preventDefault()
-        console.log(this.text())
         var id = $(this).data("id");
 
         $.ajax("/api/burger/" + id, {
@@ -17,6 +15,21 @@ $(function () {
         )
     });
 
-    // $(".create-form").on("submit", function (event))
-
+    $(".create-form").on("submit", function (event) {
+        event.preventDefault();
+        console.log(event);
+        console.log($("add-burger").val().trim())
+        var newBurger = {
+            burger_name: $("#add-burger").val().trim(),
+        }
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function() {
+                console.log("we are here!")
+                // location.reload();
+            }
+        )
+    });
 })

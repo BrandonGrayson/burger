@@ -8,15 +8,16 @@
 {{!-- {{#each burgers}} --}}
     {{#each burgers}}
         {{#unless devoured}}
-            <li id="burger-list">{{this.burger_name}}
-                <button id="eat-burger" class="eat-burger">Eat Da Burger</button>
+            <li id="burger-list">
+                {{this.burger_name}}
+                <button data-id="{{this.id}}" >Devour</button>
             </li>
     {{!-- {{> cats/cat-block sleep=true}} --}}
         {{/unless}}
     {{/each}}
 </ul>
 
-<h2 >Burgers that are devoured</h2>
+<h2 >Devoured Burgers</h2>
 
  <ul>
     {{#each burgers}}
@@ -27,11 +28,10 @@
     {{/each}}
 </ul> 
 
-<form class="create-form" method="POST">
-	<div>
+<form class="create-form">
+	<div class="form-group">
         <label for="burger">Burger Name:</label>
         <input type="text" id="add-burger" name="name">
     </div>
-    <input type="submit" value="newburger">
-	<button id="burger-to-be-devoured" type="submit" >Submit</button>
+    <input type="submit" value="burger">
 </form>
