@@ -1,7 +1,7 @@
 # Eat Da Burger
 
 ## Description
-Welcome to Eat the burger. An app that allows users to eat any burger there heart desires. 
+Welcome to Eat the burger. An app that allows users to eat any burger their heart desires. 
 
 ### Dependencies
 mySQL
